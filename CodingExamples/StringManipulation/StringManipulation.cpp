@@ -6,17 +6,15 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	if (argc < 2)
+	DoubleList * head = NULL;
+	for (int i = 0; i < 6; i++)
 	{
-		printf("Please enter a string for reversing...\n");
-		return 0;
+		InsertData(&head, (void *)i);
 	}
 
-	// string was entered and we want to reverse it now. 
-	if (argv[0] == "-r")
-	{
+	PrintList(head);
 
-	}
+
 	return 0;
 }
 

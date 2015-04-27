@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodingExamples", "CodingExamples\CodingExamples.vcxproj", "{3E86279E-C6E8-4120-A1AE-FC84988C5ACE}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringManipulation", "StringManipulation\StringManipulation.vcxproj", "{C13C160C-20ED-4A95-AF04-CFE4DAE5AA7B}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3E86279E-C6E8-4120-A1AE-FC84988C5ACE}.Debug|Win32.ActiveCfg = Debug|Win32
-		{3E86279E-C6E8-4120-A1AE-FC84988C5ACE}.Debug|Win32.Build.0 = Debug|Win32
-		{3E86279E-C6E8-4120-A1AE-FC84988C5ACE}.Release|Win32.ActiveCfg = Release|Win32
-		{3E86279E-C6E8-4120-A1AE-FC84988C5ACE}.Release|Win32.Build.0 = Release|Win32
 		{C13C160C-20ED-4A95-AF04-CFE4DAE5AA7B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{C13C160C-20ED-4A95-AF04-CFE4DAE5AA7B}.Debug|Win32.Build.0 = Debug|Win32
 		{C13C160C-20ED-4A95-AF04-CFE4DAE5AA7B}.Release|Win32.ActiveCfg = Release|Win32
