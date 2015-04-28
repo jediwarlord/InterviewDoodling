@@ -17,3 +17,6 @@ typedef struct _DoubleList
 
 bool InsertData(DoubleList** List, void* data);
 void PrintList(DoubleList* List);
+BOOL InitList(DoubleList** List);
+BOOL stackPush(DoubleList* stack, void* data);
+BOOL stackPop(DoubleList* stack, DoublyLinked** data);

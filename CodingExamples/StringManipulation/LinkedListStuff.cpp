@@ -72,3 +72,65 @@ void PrintList(DoubleList* List)
 	}
 	
 }
+
+BOOL stackPop(DoubleList* stack, DoublyLinked** data)
+
+{
+	if (stack->Head == NULL)
+	{
+		return FALSE;
+	}
+
+	*data = (stack->Head);
+	stack->Head = stack->Head->Next;
+	(stack->size)--;
+
+	return TRUE;
+}
+
+BOOL stackPush(DoubleList* stack, void* data)
+{
+	DoublyLinked * node = NULL;
+	
+	//create a node from data and push it on the stack...
+	//check first case scenario where list is null
+	if (stack->Head == NULL)
+	{
+		if ((node = (DoublyLinked *)(malloc(sizeof(DoublyLinked)))) == NULL)
+			return FALSE;
+		node->data = (data);
+		node->Next = NULL;
+		node->Previous = NULL;
+
+		stack->Head = node;
+		(stack->size)++;
+		return FALSE;
+	}
+	//we want to insert at the head so that the last thing on the stake is the last node to retrieve.
+	if ((node = (DoublyLinked *)(malloc(sizeof(DoublyLinked)))) == NULL)
+		return FALSE;
+
+	node->Next = stack->Head;
+	node->data = data;
+	stack->Head = node;
+	(stack->size)++;
+	return TRUE;
+}
+
+BOOL InitList(DoubleList** List)
+{
+	//initialize list
+	if ((*List) == NULL)
+	{
+		if (((*List) = (DoubleList *)malloc(sizeof(DoubleList))) == NULL)
+			return FALSE;
+		
+	}
+
+	(*List)->Head = NULL;
+	(*List)->Tail = NULL;
+	(*List)->size = 0;
+
+
+
+}
