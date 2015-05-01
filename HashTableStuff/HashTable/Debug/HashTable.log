@@ -1,0 +1,24 @@
+﻿Build started 5/1/2015 11:43:43 AM.
+     1>Project "C:\Users\ommalik\Documents\Visual Studio 2013\Projects\HashTableStuff\HashTable\HashTable.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\HashTable.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt chtbl.c List.c
+         List.c
+         chtbl.c
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\HashTable.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt HashTable.cpp stdafx.cpp
+         stdafx.cpp
+         HashTable.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ommalik\Documents\Visual Studio 2013\Projects\HashTableStuff\Debug\HashTable.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ommalik\Documents\Visual Studio 2013\Projects\HashTableStuff\Debug\HashTable.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ommalik\Documents\Visual Studio 2013\Projects\HashTableStuff\Debug\HashTable.lib" /MACHINE:X86 Debug\chtbl.obj
+         Debug\HashTable.obj
+         Debug\List.obj
+         Debug\stdafx.obj
+     1>HashTable.obj : error LNK2019: unresolved external symbol "void __cdecl list_init(struct List_ *,void (__cdecl*)(void *))" (?list_init@@YAXPAUList_@@P6AXPAX@Z@Z) referenced in function "int __cdecl chtbl_init(struct CHTbl_ *,int,int (__cdecl*)(void const *),int (__cdecl*)(void const *,void const *),void (__cdecl*)(void *))" (?chtbl_init@@YAHPAUCHTbl_@@HP6AHPBX@ZP6AH11@ZP6AXPAX@Z@Z)
+     1>HashTable.obj : error LNK2019: unresolved external symbol "void __cdecl list_destroy(struct List_ *)" (?list_destroy@@YAXPAUList_@@@Z) referenced in function "void __cdecl chtbl_destroy(struct CHTbl_ *)" (?chtbl_destroy@@YAXPAUCHTbl_@@@Z)
+     1>HashTable.obj : error LNK2019: unresolved external symbol "int __cdecl list_ins_next(struct List_ *,struct ListElmt_ *,void const *)" (?list_ins_next@@YAHPAUList_@@PAUListElmt_@@PBX@Z) referenced in function "int __cdecl chtbl_insert(struct CHTbl_ *,void const *)" (?chtbl_insert@@YAHPAUCHTbl_@@PBX@Z)
+     1>HashTable.obj : error LNK2019: unresolved external symbol "int __cdecl list_rem_next(struct List_ *,struct ListElmt_ *,void * *)" (?list_rem_next@@YAHPAUList_@@PAUListElmt_@@PAPAX@Z) referenced in function "int __cdecl chtbl_remove(struct CHTbl_ *,void * *)" (?chtbl_remove@@YAHPAUCHTbl_@@PAPAX@Z)
+     1>C:\Users\ommalik\Documents\Visual Studio 2013\Projects\HashTableStuff\Debug\HashTable.exe : fatal error LNK1120: 4 unresolved externals
+     1>Done Building Project "C:\Users\ommalik\Documents\Visual Studio 2013\Projects\HashTableStuff\HashTable\HashTable.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.61

@@ -15,31 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="chtbl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="Hashtablefunc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HashtableMain.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="List.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="chtbl.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Hashtable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

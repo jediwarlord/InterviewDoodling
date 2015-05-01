@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{629453CD-2216-4265-B59E-FE859083E838}</ProjectGuid>
+    <ProjectGuid>{F94E8983-E636-4E3F-AE1C-E75BCDAD0D77}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>HashTableStuff</RootNamespace>
+    <RootNamespace>HashTable</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="chtbl.c" />
+    <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="List.c" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

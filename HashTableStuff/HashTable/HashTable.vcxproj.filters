@@ -35,6 +35,9 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HashTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="List.c">
       <Filter>Source Files</Filter>
     </ClCompile>
