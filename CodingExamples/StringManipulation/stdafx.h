@@ -6,11 +6,8 @@
 #pragma once
 
 #include "targetver.h"
+#include "Hashtable.h"
 
-#include <stdio.h>
-#include <tchar.h>
-#include <windows.h>
-#include "LinkedList.h"
 
 
 

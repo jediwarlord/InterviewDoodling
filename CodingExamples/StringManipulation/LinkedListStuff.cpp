@@ -49,6 +49,25 @@ bool InsertData(DoubleList** List, void* data)
 	return FALSE; //should never get here
 }
 
+void DestroyList(DoubleList** List)
+{
+	//iterate through the list and release allocated memory
+
+	DoublyLinked* node = (*List)->Head;
+	if (node == NULL){
+		return;
+	}
+
+	while (node != NULL)
+	{
+		DoublyLinked* temp = node->Next;
+		free(node);
+		node = temp;
+	}
+
+	return;
+}
+
 void PrintList(DoubleList* List)
 {
 	int i = 0;
@@ -131,6 +150,20 @@ BOOL InitList(DoubleList** List)
 	(*List)->Tail = NULL;
 	(*List)->size = 0;
 
+
+
+}
+
+BOOL InitDoubleList(DoubleList* List)
+{
+	//initialize list
+
+
+	List->Head = NULL;
+	List->Tail = NULL;
+	List->size = 0;
+
+	return 0;
 
 
 }

@@ -1,4 +1,6 @@
-#include "stdafx.h"
+#include <stdio.h>
+#include <tchar.h>
+#include <windows.h>
 
 typedef struct _doublylinked
 {
@@ -17,6 +19,10 @@ typedef struct _DoubleList
 
 bool InsertData(DoubleList** List, void* data);
 void PrintList(DoubleList* List);
+void DestroyList(DoubleList** List);
+DoublyLinked* ReturnElement(int index);
 BOOL InitList(DoubleList** List);
+BOOL InitDoubleList(DoubleList* List);
 BOOL stackPush(DoubleList* stack, void* data);
 BOOL stackPop(DoubleList* stack, DoublyLinked** data);
+
