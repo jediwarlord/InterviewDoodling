@@ -40,3 +40,4 @@ BOOL initHashTable(HashTable ** table, int Bucketsize);
 int HaskKey(char * _key);
 BOOL insetHashTable(HashTable* table, void * data);
 BOOL lookupTable(HashTable* table, void * data);
+bool ht_insertList(hashtable_t *hashtable, entry_s ** Bucket, entry_s *NewValue, int bin);

@@ -19,6 +19,9 @@ BOOL initHashTable(HashTable ** table, int Bucketsize)
 
 }
 
+
+
+
 char * strdup(const char * s)
 {
 	size_t len = 1 + strlen(s);
@@ -99,6 +102,62 @@ entry_t *ht_newpair(char *key, char *value) {
 	return newpair;
 }
 
+
+bool ht_insertList(hashtable_t *hashtable, entry_s ** Bucket, entry_s *NewValue, int bin)
+{
+	//insert new key value pair in the list. 
+	entry_s * temp = NULL;
+	entry_s * last = NULL;
+
+	//check to see if the list is in the beginning.
+	if (*Bucket == NULL)
+	{
+		//we're eat the beginning of this bucket.
+		*Bucket = NewValue;
+		NewValue->next = NULL;
+	}
+	else
+	{
+		//find the last node in this bucket at add or replace existing entry 
+		//with the newValue if it already exists.
+		temp = *Bucket; // start of the node.
+		while (temp != NULL)
+		{
+			//check to see if is a duplicate for a key
+			if (temp->key != NULL && strcmp(NewValue->key, temp->key) == 0)
+			{
+				//there is a duplicate so lets replace it here and return from here as well.
+				//free the key value pair but replicate it's links first.
+				free(temp->value);
+				temp->value = _strdup(NewValue->value);
+				free(NewValue->key);
+				free(NewValue->value);
+				free(NewValue);
+			}
+			else
+			{ // no duplicate on this iteration so keep going till the end of the list
+				last = temp; // track the last node we moved from
+				temp = temp->next;
+			}
+
+		} //exiting means we have found the end of the list and should add it here
+
+		//growing a pair ;) 
+		last->next = NewValue;
+		NewValue->next = NULL;
+
+		//increase the size of the hash table. 
+		hashtable->size++;
+		return 0;
+	}
+
+	hashtable->table[bin] = *Bucket;
+
+
+}
+
+
+
 /* Insert a key-value pair into a hash table. */
 void ht_set(hashtable_t *hashtable, char *key, char *value) {
 	int bin = 0;
@@ -108,41 +167,45 @@ void ht_set(hashtable_t *hashtable, char *key, char *value) {
 
 	bin = ht_hash(hashtable, key);
 
+
+
 	next = hashtable->table[bin];
 
-	while (next != NULL && next->key != NULL && strcmp(key, next->key) > 0) {
-		last = next;
-		next = next->next;
-	}
+	ht_insertList(hashtable, &next, ht_newpair(key, value), bin);
 
-	/* There's already a pair.  Let's replace that string. */
-	if (next != NULL && next->key != NULL && strcmp(key, next->key) == 0) {
+	//while (next != NULL && next->key != NULL && strcmp(key, next->key) > 0) {
+	//	last = next;
+	//	next = next->next;
+	//}
 
-		free(next->value);
-		next->value = _strdup(value);
+	///* There's already a pair.  Let's replace that string. */
+	//if (next != NULL && next->key != NULL && strcmp(key, next->key) == 0) {
 
-		/* Nope, could't find it.  Time to grow a pair. */
-	}
-	else {
-		newpair = ht_newpair(key, value);
+	//	free(next->value);
+	//	next->value = _strdup(value);
 
-		/* We're at the start of the linked list in this bin. */
-		if (next == hashtable->table[bin]) {
-			newpair->next = next;
-			hashtable->table[bin] = newpair;
+	//	/* Nope, could't find it.  Time to grow a pair. */
+	//}
+	//else {
+	//	newpair = ht_newpair(key, value);
 
-			/* We're at the end of the linked list in this bin. */
-		}
-		else if (next == NULL) {
-			last->next = newpair;
+	//	/* We're at the start of the linked list in this bin. */
+	//	if (next == hashtable->table[bin]) {
+	//		newpair->next = next;
+	//		hashtable->table[bin] = newpair;
 
-			/* We're in the middle of the list. */
-		}
-		else  {
-			newpair->next = next;
-			last->next = newpair;
-		}
-	}
+	//		/* We're at the end of the linked list in this bin. */
+	//	}
+	//	else if (next == NULL) {
+	//		last->next = newpair;
+
+	//		/* We're in the middle of the list. */
+	//	}
+	//	else  {
+	//		newpair->next = next;
+	//		last->next = newpair;
+	//	}
+	//}
 }
 
 /* Retrieve a key-value pair from a hash table. */
