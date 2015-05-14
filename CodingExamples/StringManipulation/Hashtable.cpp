@@ -115,6 +115,7 @@ bool ht_insertList(hashtable_t *hashtable, entry_s ** Bucket, entry_s *NewValue,
 		//we're eat the beginning of this bucket.
 		*Bucket = NewValue;
 		NewValue->next = NULL;
+		hashtable->table[bin] = *Bucket;
 	}
 	else
 	{
@@ -133,6 +134,8 @@ bool ht_insertList(hashtable_t *hashtable, entry_s ** Bucket, entry_s *NewValue,
 				free(NewValue->key);
 				free(NewValue->value);
 				free(NewValue);
+				return 0;
+				break;
 			}
 			else
 			{ // no duplicate on this iteration so keep going till the end of the list
@@ -151,7 +154,6 @@ bool ht_insertList(hashtable_t *hashtable, entry_s ** Bucket, entry_s *NewValue,
 		return 0;
 	}
 
-	hashtable->table[bin] = *Bucket;
 
 
 }
