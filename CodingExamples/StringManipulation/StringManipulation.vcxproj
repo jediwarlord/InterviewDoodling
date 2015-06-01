@@ -85,6 +85,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddLinkedList.cpp" />
     <ClCompile Include="Hashtable.cpp" />
     <ClCompile Include="LinkedListStuff.cpp" />
     <ClCompile Include="stdafx.cpp">

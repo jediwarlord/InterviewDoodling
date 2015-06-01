@@ -7,21 +7,21 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 
-	hashtable_t *hashtable = ht_create(65536);
+	//hashtable_t *hashtable = ht_create(65536);
 
-	ht_set(hashtable, "key1", "inky");
-	ht_set(hashtable, "key1", "Omer");
-	ht_set(hashtable, "key2", "pinky");
-	ht_set(hashtable, "key3", "blinky");
-	ht_set(hashtable, "key4", "floyd");
-	
+	//ht_set(hashtable, "key1", "inky");
+	//ht_set(hashtable, "key1", "Omer");
+	//ht_set(hashtable, "key2", "pinky");
+	//ht_set(hashtable, "key3", "blinky");
+	//ht_set(hashtable, "key4", "floyd");
+	//
 
-	printf("%s\n", ht_get(hashtable, "key1"));
-	printf("%s\n", ht_get(hashtable, "key2"));
-	printf("%s\n", ht_get(hashtable, "key3"));
-	printf("%s\n", ht_get(hashtable, "key4"));
+	//printf("%s\n", ht_get(hashtable, "key1"));
+	//printf("%s\n", ht_get(hashtable, "key2"));
+	//printf("%s\n", ht_get(hashtable, "key3"));
+	//printf("%s\n", ht_get(hashtable, "key4"));
 
-	return 0;
+	//return 0;
 	//DoubleList * head = NULL;
 	//DoubleList * Stack = NULL;
 	//HashTable * HashTable = NULL;
@@ -61,6 +61,39 @@ int _tmain(int argc, _TCHAR* argv[])
 	//	free(temp);
 
 	//}
+
+	//saw we get a number in a linked list that we want to add.
+	//each linked list is initialized with a number.
+
+	DoubleList* FirstNumber = NULL;
+	DoubleList* SecondNumber = NULL;
+	UINT32 ui32_digit = 0;
+	UINT32 ui32_carry = 0;
+
+	//we want to initialize the linked list so as to contain the individual numbers. 
+	//lets start with 3 digit numbers and move from there. We can use the carry digit 
+	// as a UINT referenced variable to use in fucntio n calls.
+
+	//first number.... 519
+	ui32_digit = 9;
+	InsertData(&FirstNumber,  ((&ui32_digit)));
+	ui32_digit = 1;
+	InsertData(&FirstNumber, ((&ui32_digit)));
+	ui32_digit = 5;
+	InsertData(&FirstNumber, ((&ui32_digit)));
+
+	//second number...567
+
+	ui32_digit = 7;
+	InsertData(&SecondNumber, ((&ui32_digit)));
+	ui32_digit = 6;
+	InsertData(&SecondNumber, ((&ui32_digit)));
+	ui32_digit = 5;
+	InsertData(&SecondNumber, ((&ui32_digit)));
+
+	//print the numbers just to be sure..
+	PrintList(FirstNumber);
+	PrintList(SecondNumber);
 
 
 	return 0;
