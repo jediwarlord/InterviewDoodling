@@ -5,6 +5,7 @@ bool InsertData(DoubleList** List, void* data)
 {
 	DoublyLinked* node = (DoublyLinked *)malloc(sizeof(DoublyLinked));
 	node->data = data;
+	node->number = *((UINT32 *)data);
 	DoublyLinked* TempNode;
 
 
@@ -84,7 +85,7 @@ void PrintList(DoubleList* List)
 
 	while (node != NULL)
 	{
-		printf("%d element has %d value \n", (i + 1), (int *)node->data);
+		printf("%d element has %d value \n", (i + 1), node->number);
 
 		i++;
 		node = node->Next;
@@ -166,4 +167,54 @@ BOOL InitDoubleList(DoubleList* List)
 	return 0;
 
 
+}
+
+BOOL AddLists(DoublyLinked * FirstNumber, DoublyLinked * SecondNumber, DoublyLinked ** Result, UINT32 Carry)
+{
+	UINT32 Addition = 0;
+
+	//so first check if the lists are not null...
+	if (FirstNumber == NULL && FirstNumber == NULL && Carry == 0)
+	{
+		*Result = NULL;
+		return FALSE; 
+	}
+
+	//now do the first addition..
+	//Take the unit first and add them .
+	if (FirstNumber != NULL)
+	{
+		Addition += FirstNumber->number;
+		
+	}
+	if (SecondNumber != NULL)
+	{
+		Addition += SecondNumber->number;
+	}
+
+	Addition += Carry;
+
+	
+
+	if (Addition >= 10)
+	{//there is a carry that needs to go into the next digit
+		if (*Result == NULL) // create space for first digit in new result
+		{
+			*Result = (DoublyLinked *)malloc(sizeof(DoublyLinked));
+			(*Result)->Next = NULL;
+			(*Result)->number = Addition % 10; //save  the modulo into the field
+			AddLists((FirstNumber == NULL ? NULL : FirstNumber->Next), (SecondNumber == NULL ? NULL : SecondNumber->Next), &((*Result)->Next), 1);
+		}
+	}
+	 else // there is no carry
+	{
+		 *Result = (DoublyLinked *)malloc(sizeof(DoublyLinked));
+		 (*Result)->Next = NULL;
+		 (*Result)->number = Addition; //save  the modulo into the field
+		 AddLists((FirstNumber == NULL ? NULL : FirstNumber->Next), (SecondNumber == NULL ? NULL : SecondNumber->Next), &((*Result)->Next), 0);
+	}
+
+	
+
+	return TRUE;
 }

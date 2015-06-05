@@ -3,11 +3,16 @@
 #include <windows.h>
 #include <string.h>
 
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+
 typedef struct _doublylinked
 {
 	void* data;
 	_doublylinked* Previous;
 	_doublylinked* Next;
+	UINT32 number;
 
 } DoublyLinked;
 
@@ -26,4 +31,6 @@ BOOL InitList(DoubleList** List);
 BOOL InitDoubleList(DoubleList* List);
 BOOL stackPush(DoubleList* stack, void* data);
 BOOL stackPop(DoubleList* stack, DoublyLinked** data);
+BOOL AddLists(DoublyLinked * FirstNumber, DoublyLinked * SecondNumber, DoublyLinked ** Result, UINT32 Carry);
 
+#endif

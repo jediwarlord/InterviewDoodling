@@ -1,19 +1,22 @@
-﻿Build started 5/21/2015 4:02:11 PM.
+﻿Build started 6/5/2015 1:37:08 PM.
      1>Project "C:\Users\Omer\Documents\GitHub\InterviewDoodling\CodingExamples\StringManipulation\StringManipulation.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\StringManipulation.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt AddLinkedList.cpp Hashtable.cpp LinkedListStuff.cpp stdafx.cpp MainDriver.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\StringManipulation.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt AddLinkedList.cpp BinaryTrees.cpp Hashtable.cpp LinkedListStuff.cpp stdafx.cpp MainDriver.cpp
          MainDriver.cpp
          stdafx.cpp
          LinkedListStuff.cpp
-     1>c:\users\omer\documents\github\interviewdoodling\codingexamples\stringmanipulation\linkedliststuff.cpp(155): warning C4715: 'InitList' : not all control paths return a value
+     1>c:\users\omer\documents\github\interviewdoodling\codingexamples\stringmanipulation\linkedliststuff.cpp(156): warning C4715: 'InitList' : not all control paths return a value
          Hashtable.cpp
      1>c:\users\omer\documents\github\interviewdoodling\codingexamples\stringmanipulation\hashtable.cpp(26): warning C4273: 'strdup' : inconsistent dll linkage
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(245) : see previous definition of 'strdup'
      1>c:\users\omer\documents\github\interviewdoodling\codingexamples\stringmanipulation\hashtable.cpp(75): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\omer\documents\github\interviewdoodling\codingexamples\stringmanipulation\hashtable.cpp(159): warning C4715: 'ht_insertList' : not all control paths return a value
+         BinaryTrees.cpp
+     1>c:\users\omer\documents\github\interviewdoodling\codingexamples\stringmanipulation\binarytrees.cpp(154): warning C4101: 'x' : unreferenced local variable
          AddLinkedList.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Omer\Documents\GitHub\InterviewDoodling\CodingExamples\Debug\StringManipulation.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Omer\Documents\GitHub\InterviewDoodling\CodingExamples\Debug\StringManipulation.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Omer\Documents\GitHub\InterviewDoodling\CodingExamples\Debug\StringManipulation.lib" /MACHINE:X86 Debug\AddLinkedList.obj
+         Debug\BinaryTrees.obj
          Debug\Hashtable.obj
          Debug\LinkedListStuff.obj
          Debug\stdafx.obj
@@ -24,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.31
+Time Elapsed 00:00:01.63

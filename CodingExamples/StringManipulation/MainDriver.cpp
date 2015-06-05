@@ -4,6 +4,7 @@
 #include "stdafx.h"
 
 
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 
@@ -65,37 +66,56 @@ int _tmain(int argc, _TCHAR* argv[])
 	//saw we get a number in a linked list that we want to add.
 	//each linked list is initialized with a number.
 
-	DoubleList* FirstNumber = NULL;
-	DoubleList* SecondNumber = NULL;
-	UINT32 ui32_digit = 0;
-	UINT32 ui32_carry = 0;
+	//DoubleList* FirstNumber = NULL;
+	//DoubleList* SecondNumber = NULL;
+	//DoublyLinked* Result = NULL;
 
-	//we want to initialize the linked list so as to contain the individual numbers. 
-	//lets start with 3 digit numbers and move from there. We can use the carry digit 
-	// as a UINT referenced variable to use in fucntio n calls.
+	//UINT32 ui32_digit = 0;
+	//UINT32 ui32_carry = 0;
 
-	//first number.... 519
-	ui32_digit = 9;
-	InsertData(&FirstNumber,  ((&ui32_digit)));
-	ui32_digit = 1;
-	InsertData(&FirstNumber, ((&ui32_digit)));
-	ui32_digit = 5;
-	InsertData(&FirstNumber, ((&ui32_digit)));
+	////we want to initialize the linked list so as to contain the individual numbers. 
+	////lets start with 3 digit numbers and move from there. We can use the carry digit 
+	//// as a UINT referenced variable to use in fucntio n calls.
 
-	//second number...567
+	////first number.... 519
+	//ui32_digit = 9;
+	//InsertData(&FirstNumber,  ((&ui32_digit)));
+	//ui32_digit = 1;
+	//InsertData(&FirstNumber, ((&ui32_digit)));
+	//ui32_digit = 5;
+	//InsertData(&FirstNumber, ((&ui32_digit)));
 
-	ui32_digit = 7;
-	InsertData(&SecondNumber, ((&ui32_digit)));
-	ui32_digit = 6;
-	InsertData(&SecondNumber, ((&ui32_digit)));
-	ui32_digit = 5;
-	InsertData(&SecondNumber, ((&ui32_digit)));
+	////second number...567
 
-	//print the numbers just to be sure..
-	PrintList(FirstNumber);
-	PrintList(SecondNumber);
+	//ui32_digit = 7;
+	//InsertData(&SecondNumber, ((&ui32_digit)));
+	//ui32_digit = 6;
+	//InsertData(&SecondNumber, ((&ui32_digit)));
+	//ui32_digit = 5;
+	//InsertData(&SecondNumber, ((&ui32_digit)));
+
+	////print the numbers just to be sure..
+	//PrintList(FirstNumber);
+	//PrintList(SecondNumber);
+
+	////now we want to add these linked list and carry over any carrys
+	////return a list that contains the addition of the list.
+	//AddLists(FirstNumber->Head, SecondNumber->Head, &Result, ui32_carry);
 
 
+	//We will do the circular linked list question here...
+
+	//Binary tree operations..
+	Tree* HeadNode = NULL;
+
+	insertBinaryNode(3, &HeadNode);
+	insertBinaryNode(4, &HeadNode);
+	insertBinaryNode(2, &HeadNode);
+	insertBinaryNode(10, &HeadNode);
+	insertBinaryNode(15, &HeadNode);
+	insertBinaryNode(7, &HeadNode);
+
+	print_ascii_tree(HeadNode);
 	return 0;
 }
 

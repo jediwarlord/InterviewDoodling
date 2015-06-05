@@ -7,6 +7,7 @@
 
 #include "targetver.h"
 #include "Hashtable.h"
+#include "BinaryTree.h"
 
 
 
