@@ -107,6 +107,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	//Binary tree operations..
 	Tree* HeadNode = NULL;
+	int size = 0;
 
 	insertBinaryNode(3, &HeadNode);
 	insertBinaryNode(4, &HeadNode);
@@ -116,6 +117,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	insertBinaryNode(7, &HeadNode);
 
 	print_ascii_tree(HeadNode);
+	PreOrderTree(HeadNode, &size);
+
+	printf("\n Size of binary tree is....%u ", size);
 	return 0;
 }
 

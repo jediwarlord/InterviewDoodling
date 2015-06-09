@@ -19,3 +19,4 @@ struct Tree
 
 bool insertBinaryNode(int _data, Tree** _RootNode);
 void print_ascii_tree(Tree * t);
+void PreOrderTree(Tree* Node, int* size);

@@ -513,3 +513,19 @@ void print_ascii_tree(Tree * t)
 //	make_empty(root);
 //}
 
+
+// pre-order traversal for binary trees..
+void PreOrderTree(Tree* Node, int* size)
+{
+	if (Node == NULL)
+	{
+		return;
+	}
+	printf("%u ", Node->element);
+	(*size)++;
+
+	PreOrderTree(Node->left, size);
+	PreOrderTree(Node->right, size);
+
+}
+
