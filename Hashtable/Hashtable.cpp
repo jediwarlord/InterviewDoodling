@@ -1,7 +1,7 @@
 //
 // Created by ommalik on 6/26/2016.
 //
-
+#include <stdafx.h>
 #include "Hashtable.h"
 
 int Hashtable::hash(char *itemKey)
