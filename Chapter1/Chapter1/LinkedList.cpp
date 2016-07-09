@@ -32,6 +32,11 @@ Item * LinkedList::getItem(char *Key)
 	return NULL;
 }
 
+int LinkedList::getLength()
+{
+	return length;
+}
+
 bool LinkedList::removeItem(char *Key)
 {
     //traverse list and remove node if found...

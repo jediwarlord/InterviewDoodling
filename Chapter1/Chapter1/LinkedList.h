@@ -21,9 +21,10 @@ public:
     void insertItem(Item * newItem);
     bool removeItem(char * Key);
     Item * getItem(char * Key);
+	int getLength();
 private:
     Item * Head;
-    int length;
+    int length = 0;
     bool Compare(char *Key, Item *Node);
 };
 

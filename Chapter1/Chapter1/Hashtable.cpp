@@ -52,8 +52,9 @@ void Hashtable::printHistogram() {
 
 }
 
-int Hashtable::getLength() {
-    return 0;
+int Hashtable::getLength(char * itemKey) {
+	auto index = hash(itemKey);
+    return HashEntry[index].getLength();
 }
 
 int Hashtable::getNumberofItems() {

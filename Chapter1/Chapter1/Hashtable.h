@@ -20,7 +20,7 @@ class Hashtable
         Item * getItemByKey(char * itemKey);
         void printTable();
         void printHistogram();
-        int getLength();
+        int getLength(char* itemKey);
         int getNumberofItems();
         int stringlength(char * Keystring);
         ~Hashtable();
