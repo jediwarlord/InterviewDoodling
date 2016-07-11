@@ -5,6 +5,39 @@
 
 using namespace std;
 
+string compression(string _cstring)
+{
+	string returnstring;
+	char * chararray = (char *) _cstring.c_str();
+	//we will step through each char to find 
+	for (int i = 0; i < _cstring.length(); )
+	{
+		int count = 1;
+		returnstring += chararray[i];
+		for (int j = 1; j < _cstring.length(); j++)
+		{
+			if (_cstring[i] != _cstring[i + j])
+			{
+				break;
+			}
+			else
+			{
+				count += 1;
+			}
+		}
+		if (count > 1)
+		{
+			returnstring += std::to_string(count);
+			i += count;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return returnstring;
+}
+
 bool isPalindromePermutation(string palindrome)
 {
 	bool _oddeven = 0; //0 for odd....1 for even..
@@ -66,6 +99,34 @@ bool isPalindromePermutation(string palindrome)
 
 }
 
+bool editaway(string string1, string string2)
+{
+	//first we want to check if they differ more than 1 in length..
+	int length = string1.length() - string2.length();
+	length = abs(length);
+	char * cstring1 = (char *)string1.c_str();
+	char * cstring2 = (char *)string2.c_str();
+
+	if (length > 1)
+	{
+		return false;
+	}
+
+	//their length is closeby...
+	if (string1.length() > string2.length())
+	{
+		for (int i = 0; i < string1.length(); i++)
+		{
+			
+		}
+	}
+	else
+	{
+		
+	}
+	
+}
+
 int main() 
 {
 
@@ -74,6 +135,10 @@ int main()
     Hashtable * table = new Hashtable(13);
 	string palindrome = "tact coa";
 	string *testing = new string("booyeah");
+	//question 1.5
+	string string1 = "pale", string2 = "ple";
+		//question 1.6
+	string compressionstring = "Thiiiis isssssss a test";
 
 	(*testing)[5] = 'X';
 	(*testing).at(5) = 'P';
@@ -97,6 +162,12 @@ int main()
 
 	//question 1.4 
 	isPalindromePermutation(palindrome);
+
+	//question 1.5
+	editaway(string1, string2);
+
+	//question 1.6
+	compression(compressionstring);
 
     cout << "Hello, World!" << endl;
     return 0;
