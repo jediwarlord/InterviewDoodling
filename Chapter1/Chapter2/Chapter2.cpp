@@ -7,6 +7,45 @@
 #include <iostream>
 
 
+ListNode * getNthNode(Linklist * _list, int _nTH)
+{
+	ListNode * current = _list->getHead();
+	ListNode * runner = current;
+	int currentcount = 0;
+
+	if (current == nullptr)
+		return nullptr;
+
+	//traverse the runner K steps ahead... if K ends up going past the last node return null..
+	while (runner)
+	{
+		if (currentcount == _nTH)
+		{
+			break;
+		}
+		else
+		{
+			//advance the runner...
+			runner = runner->next;
+			currentcount++;
+		}
+	}
+
+	if ((runner == nullptr))
+	{
+		return nullptr; //because _nth too big an index..
+	}
+
+	//no advance runner and current till runner hits last node..
+	while (runner->next)
+	{
+		current = current->next;
+		runner = runner->next;
+	}
+
+	return current;
+}
+
 void deleteDupes(Linklist * list)
 {
 	ListNode * current = list->getHead();
@@ -37,6 +76,8 @@ void deleteDupes(Linklist * list)
 int main()
 {
 	Linklist baselist;
+	ListNode * _nthNode;
+
 
 	//add an item..
 	baselist.appendNode("This is a test");
@@ -46,8 +87,11 @@ int main()
 	baselist.appendNode("test1");
 
 	baselist.printList();
-	deleteDupes(&baselist);
+	//deleteDupes(&baselist);
 	baselist.printList();
+
+	//find kth node..
+	_nthNode = getNthNode(&baselist, 5);
 
 
     return 0;
