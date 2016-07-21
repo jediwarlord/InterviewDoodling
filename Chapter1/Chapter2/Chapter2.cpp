@@ -7,6 +7,8 @@
 #include <iostream>
 
 
+
+
 ListNode * getNthNode(Linklist * _list, int _nTH)
 {
 	ListNode * current = _list->getHead();
@@ -44,6 +46,28 @@ ListNode * getNthNode(Linklist * _list, int _nTH)
 	}
 
 	return current;
+}
+
+bool deleteNode(ListNode * _node)
+{
+	ListNode * temp;
+	if (!_node->next)
+	{//last node..
+	    temp = _node;
+		free(_node); //does this make it null though?
+		temp = nullptr;
+		return;
+	}
+
+	//or we shift all the nodes up one to take the free space..
+	ListNode * traverseNode = _node;	
+
+	traverseNode = traverseNode->next; 
+	_node->data = traverseNode->data;
+	_node->next = traverseNode->next;
+	return true;
+
+
 }
 
 void deleteDupes(Linklist * list)
@@ -92,6 +116,11 @@ int main()
 
 	//find kth node..
 	_nthNode = getNthNode(&baselist, 5);
+
+
+	//delete node with only access to that node..
+
+	//split linkedlist at node...
 
 
     return 0;
