@@ -30,6 +30,7 @@ ListNode * getNthNode(Linklist * _list, int _nTH)
 			//advance the runner...
 			runner = runner->next;
 			currentcount++;
+			//this is a tests
 		}
 	}
 
