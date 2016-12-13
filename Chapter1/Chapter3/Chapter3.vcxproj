@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="33Header.h" />
+    <ClInclude Include="34Header.h" />
     <ClInclude Include="ArrayStack.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="stdafx.h" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="33Header.cpp" />
+    <ClCompile Include="34Header.cpp" />
     <ClCompile Include="Chapter3.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="stdafx.cpp">

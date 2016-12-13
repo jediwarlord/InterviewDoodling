@@ -6,6 +6,7 @@
 #include "33Header.h"
 #include <iostream>
 #include <stdio.h>
+#include "34Header.h"
 
 using namespace std;
 
@@ -23,6 +24,14 @@ int main()
 	cout << Stack.Pop() << "\n";
 	cout << Stack.Pop() << "\n";
 
+	QueueStack SetofStacks;
+
+	SetofStacks.Push(3);
+	SetofStacks.Push(2);
+	SetofStacks.Push(4);
+	SetofStacks.Push(6);
+	SetofStacks.Push(5);
+	SetofStacks.Push(1);
 
     return 0;
 }
