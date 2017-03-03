@@ -2,7 +2,7 @@
 #include "BinaryTree.h"
 #include <iostream>
 #include <stdio.h>
-#include <window	>
+#include <Windows.h>
 
 
 TreeNode * NewNode(int _data)
@@ -105,12 +105,35 @@ void printTree(TreeNode * _Node)
 {
 	//first lets get the depth of the tree..
 	int _intdepth = depth(_Node);
+	bool done = false;
 
-	for (; _intdepth > 0; --_intdepth)
+	//check to see if head is null
+	if (_Node == NULL)
 	{
-		
+		return;
 	}
 
+	printIndents(_intdepth, _Node->data);
+	printf("\n");
+
+	//check to see if 
+	//print left node...
+	printTree(_Node->Left);
+
+	//print the right tree as well with 
+	//print right node...
+	printTree(_Node->Right);
+	
 }
 
+//this function is used to print indents for the tree.
+
+void printIndents(int _intdepth, int value)
+{
+	for (; _intdepth > 0; --_intdepth)
+	{
+		printf("\t");
+	}
+	printf("%d",value);
+}
 
