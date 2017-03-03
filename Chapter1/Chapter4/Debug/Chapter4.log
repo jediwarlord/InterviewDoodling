@@ -1,1 +1,6 @@
-﻿C:\Users\ommalik\Documents\GitHub\InterviewDoodling\Chapter1\Chapter4\Chapter4.vcxproj : error MSB4057: The target "Deploy" does not exist in the project.
+﻿  stdafx.cpp
+  Chapter4.cpp
+  BinaryTree.cpp
+  Generating Code...
+  Chapter4.vcxproj -> C:\Users\ommalik\Documents\GitHub\InterviewDoodling\Chapter1\Debug\Chapter4.exe
+  Chapter4.vcxproj -> C:\Users\ommalik\Documents\GitHub\InterviewDoodling\Chapter1\Debug\Chapter4.pdb (Partial PDB)

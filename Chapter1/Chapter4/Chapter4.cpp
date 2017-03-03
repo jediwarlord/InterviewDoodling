@@ -10,8 +10,15 @@ int main()
 
 	Insert(Head, 4);
 	Insert(Head, 1);
+	Insert(Head, 5);
+	Insert(Head, 3);
+	Insert(Head, 2);
+	Insert(Head, 6);
+	Insert(Head, 7);
 
 	int size_Head = size(Head);
+	int depthsize = depth(Head);
+
 
     return 0;
 }

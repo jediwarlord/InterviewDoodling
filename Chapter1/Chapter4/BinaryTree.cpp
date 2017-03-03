@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "BinaryTree.h"
+#include <iostream>
+#include <stdio.h>
+#include <window	>
 
 
 TreeNode * NewNode(int _data)
@@ -66,6 +69,48 @@ int size(TreeNode * _Node)
 	_size = _size + size(_Node->Right);
 
 	return _size;
+}
+
+int depth(TreeNode * _Node)
+{
+	//check how deep the binary tree is...
+	int _intdepth = 0;
+	int depth_left = 0;
+	int depth_right = 0;
+
+	if (_Node != NULL)
+	{
+		_intdepth += 1;
+	}
+	else
+	{
+		return 0;
+	}
+
+	depth_left = depth(_Node->Left);
+	depth_right = depth(_Node->Right);
+
+	if (depth_left >= depth_right)
+	{
+		return  depth_left + _intdepth;
+	}
+	else
+	{
+		return  depth_right + _intdepth;
+	}
+
+}
+
+void printTree(TreeNode * _Node)
+{
+	//first lets get the depth of the tree..
+	int _intdepth = depth(_Node);
+
+	for (; _intdepth > 0; --_intdepth)
+	{
+		
+	}
+
 }
 
 

@@ -1,0 +1,6 @@
+﻿  stdafx.cpp
+  List.cpp
+  Chapter2.cpp
+c:\users\ommalik\documents\github\interviewdoodling\chapter1\chapter2\chapter2.cpp(60): error C2561: 'deleteNode': function must return a value
+  c:\users\ommalik\documents\github\interviewdoodling\chapter1\chapter2\chapter2.cpp(52): note: see declaration of 'deleteNode'
+  Generating Code...
