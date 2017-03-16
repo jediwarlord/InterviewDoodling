@@ -19,6 +19,8 @@ int main()
 	int size_Head = size(Head);
 	int depthsize = depth(Head);
 
+	printTree_byLevel(Head);
+
 	printf("test\n");
 
     return 0;

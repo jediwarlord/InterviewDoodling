@@ -28,16 +28,16 @@ class QueueNodes
 public:
 	QueueNodes(void);
 	void Push(TreeNode * _Node);
-	int Pop();
+	void Pop();
+	void Print();
 	int Min();
+	bool Empty();
+	TreeNode * front();
 private:
-	void PushValue(QueueofNodes * _Queue, int _value);
-	int _sizeofStack = 5;
-	int _numberofStacks = 0;
-	QueueofNodes * _stackQueue = NULL;
+	int size = 0;
+	StackofNodes * _stackQueue = NULL;
 };
 
-struct 
 
 TreeNode * NewNode(int _data);
 BOOL Insert(TreeNode* _Head, int _data);

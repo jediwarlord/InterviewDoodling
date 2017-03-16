@@ -101,6 +101,91 @@ int depth(TreeNode * _Node)
 
 }
 
+QueueNodes::QueueNodes(void)
+{
+	_stackQueue = NULL;
+}
+
+void QueueNodes::Push(TreeNode * _Node)
+{
+	//check Queustack is uninitialized
+	if (!_stackQueue)
+		//null
+	{
+		_stackQueue = new StackofNodes;
+		_stackQueue->PreviousNode = NULL;
+		_stackQueue->_Node = _Node;
+		this->size++;
+	}
+	else //already initalized queue..
+	{
+		StackofNodes * NewValue = new StackofNodes;
+		NewValue->PreviousNode = _stackQueue;
+		NewValue->_Node = _Node;
+		_stackQueue = NewValue;
+		this->size++;
+	}
+}
+
+bool QueueNodes::Empty()
+{
+	if (this->size == 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+TreeNode * QueueNodes::front()
+{
+	if (this->_stackQueue == NULL) return NULL;
+	return _stackQueue->_Node;
+}
+
+void QueueNodes::Pop()
+{
+	//check Queustack is uninitialized
+	if (!_stackQueue)
+		//null
+	{
+		return;
+	}
+	else //already initalized queue..so let's start popping.
+	{
+		StackofNodes * TempNode = _stackQueue->PreviousNode;
+		free(_stackQueue);
+		_stackQueue = TempNode;
+		this->size--;
+	}
+}
+
+void QueueNodes::Print()
+{
+	//check Queustack is uninitialized
+	if (!_stackQueue)
+		//null
+	{
+		printf("There is nothing here...\n");
+		return;
+	}
+	else //already initalized queue..so let's start popping.
+	{
+		StackofNodes * PrintNode = _stackQueue;
+		while (PrintNode)
+		{
+			printf("%d->", PrintNode->_Node->data);
+			PrintNode = PrintNode->PreviousNode;
+		}
+	}
+}
+
+
+
+
 void printTree(TreeNode * _Node)
 {
 	//first lets get the depth of the tree..
@@ -113,7 +198,7 @@ void printTree(TreeNode * _Node)
 		return;
 	}
 
-	printIndents(_intdepth, _Node->data);
+	
 	printf("\n");
 
 	//check to see if 
@@ -128,31 +213,39 @@ void printTree(TreeNode * _Node)
 
 void printTree_byLevel(TreeNode * _Node)
 {
-	//first lets get the depth of the tree..
-	int _intdepth = depth(_Node);
-	bool done = false;
-
 	//check to see if head is null
 	if (_Node == NULL)
 	{
 		return;
 	}
 
-	printIndents(_intdepth, _Node->data);
-	printf("\n");
+	QueueNodes currentLevel, nextLevel;
 
-	//check to see if 
-	//print left node...
-	printTree(_Node->Left);
+	currentLevel.Push(_Node); // pushing first level here...
+	while (!currentLevel.Empty())
+	{
+		TreeNode * currNode = currentLevel.front();
+		currentLevel.Pop();
+		if (currNode)
+		{
+			printf("%d ", currNode->data);
+			nextLevel.Push(currNode->Left);
+			nextLevel.Push(currNode->Right);
+		}
+		if (currentLevel.Empty())
+		{
+			printf("\n");
+			//swap out variables..
+			QueueNodes Temp;
+			Temp = currentLevel;
+			currentLevel = nextLevel;
+			nextLevel = Temp;
+		}
+	}
 
-	//print the right tree as well with 
-	//print right node...
-	printTree(_Node->Right);
+
 
 }
-
-
-
 
 //this function is used to print indents for the tree.
 
@@ -165,8 +258,3 @@ void printIndents(int _intdepth, int value)
 	printf("%d",value);
 }
 
-void QueueNodes::Push(TreeNode * _Node)
-{
-
-
-}
