@@ -1,10 +1,11 @@
 #pragma once
 
 #include <Windows.h>
+#include <stdio.h>
 
 
 typedef struct _ListNode {
-	void * _data;
+	int _data;
 	_ListNode* _next;
  } ListNode;
 
@@ -14,4 +15,8 @@ typedef struct LinkedList {
 	ListNode * _Current;
 } LinkedList;
 
-BOOL AddToList(LinkedList *_LinkedList, void * _data);
+BOOL AddToList(LinkedList *_LinkedList, int _data);
+
+void PrintList(LinkedList *_LinkedList);
+
+BOOL RemoveDup(LinkedList *_LinkedList);
