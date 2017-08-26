@@ -117,10 +117,10 @@ BOOL RemoveKth(LinkedList * _LinkedList, int Kth)
 		count++;
 	}
 
-	if (!(count == Kth - 1))
-	{
-		return false; // list was smaller than what was possible to remove.
-	}
+	//if (!(count == Kth - 1))
+	//{
+	//	return false; // list was smaller than what was possible to remove.
+	//}
 
 	//if we made it here.. the runner is Kth spaces ahead of the node to delete which should be sitting on the
 	// head at the moment.
