@@ -24,9 +24,11 @@ int main()
 	PrintList(&TestList);
 
 
+
+
 	//we want to remove duplicates from a linked list...
 
-	RemoveDup(&TestList);
+	RemoveKth(&TestList, 3);
 
 	PrintList(&TestList);
 

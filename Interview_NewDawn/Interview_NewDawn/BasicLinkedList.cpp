@@ -98,3 +98,55 @@ BOOL RemoveDup(LinkedList * _LinkedList)
 
 	return true;
 }
+
+
+BOOL RemoveKth(LinkedList * _LinkedList, int Kth)
+{
+	//we need 2 runners one to find the end of the linked list the other to trail behind by kth or < than.
+	ListNode * _Runner = _LinkedList->_Head;
+	ListNode * _Kth = _LinkedList->_Head;
+	ListNode * _PrevTemnp = NULL;
+	int count = 0;
+
+
+	//we start them both off at the head.
+	//first check would be to see if there is enough space for the function to remove the Kth node.
+	while (_Runner->_next && count < Kth)
+	{
+		_Runner = _Runner->_next;
+		count++;
+	}
+
+	if (!(count == Kth - 1))
+	{
+		return false; // list was smaller than what was possible to remove.
+	}
+
+	//if we made it here.. the runner is Kth spaces ahead of the node to delete which should be sitting on the
+	// head at the moment.
+	while (_Runner->_next)
+	{
+		//check if kth 
+		_Runner = _Runner->_next;
+		_PrevTemnp = _Kth;
+		_Kth = _Kth->_next;
+	}
+
+	//at this point we have arrived at our Kth to last node. we do the removal here.
+	//check if head node is being deleted
+	if (_Kth == _LinkedList->_Head)
+	{
+		_PrevTemnp = _LinkedList->_Head;
+		_LinkedList->_Head = _LinkedList->_Head->_next;
+		free(_PrevTemnp);
+		return true;
+	}
+	else //regular removal
+	{
+		_PrevTemnp->_next = _Kth->_next;
+		free(_Kth);
+		return true;	
+	}
+
+	return true;
+}

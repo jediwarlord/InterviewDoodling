@@ -20,3 +20,5 @@ BOOL AddToList(LinkedList *_LinkedList, int _data);
 void PrintList(LinkedList *_LinkedList);
 
 BOOL RemoveDup(LinkedList *_LinkedList);
+
+BOOL RemoveKth(LinkedList * _LinkedList, int Kth);
