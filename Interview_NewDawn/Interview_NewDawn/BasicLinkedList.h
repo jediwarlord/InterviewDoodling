@@ -22,3 +22,11 @@ void PrintList(LinkedList *_LinkedList);
 BOOL RemoveDup(LinkedList *_LinkedList);
 
 BOOL RemoveKth(LinkedList * _LinkedList, int Kth);
+
+void RemoveNodeAccesss(LinkedList * _LinkedList, ListNode * _Node);
+
+ListNode * GetNodeKth(LinkedList * _LinkedList, int _kth);
+
+//2.4 Write code to partition a linked list around a value x, such that all nodes less than
+// x come before all nodes greater than or equal to x.
+

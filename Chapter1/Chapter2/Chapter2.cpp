@@ -60,7 +60,7 @@ bool deleteNode(ListNode * _node)
 		return;
 	}
 
-	//or we shift all the nodes up one to take the free space..
+	//or we shift all the nodes up one to taked the free space..
 	ListNode * traverseNode = _node;	
 
 	traverseNode = traverseNode->next; 

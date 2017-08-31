@@ -150,3 +150,38 @@ BOOL RemoveKth(LinkedList * _LinkedList, int Kth)
 
 	return true;
 }
+
+void RemoveNodeAccesss(LinkedList * _LinkedList, ListNode * _Node)
+{
+	//need to shift up all nodes after _node up one to delete the node.
+	ListNode * _NodeRunner = _Node->_next;
+
+	_Node->_data = _NodeRunner->_data;
+	_Node->_next = _NodeRunner->_next;
+	return;
+
+}
+
+ListNode * GetNodeKth(LinkedList * _LinkedList, int _kth)
+{
+	ListNode * _Node = _LinkedList->_Head;
+	int count = 1;
+	
+	while (_Node->_next != NULL && count < _kth)
+	{
+		_Node = _Node->_next;
+		count++;
+	}
+
+	//if there is less than Kth nodes in the list reutrn nullptr
+	if (count < _kth)
+	{
+		return nullptr;
+	}
+	else
+	{
+		return _Node;
+	}
+}
+
+
