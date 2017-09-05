@@ -184,4 +184,61 @@ ListNode * GetNodeKth(LinkedList * _LinkedList, int _kth)
 	}
 }
 
+ListNode * PartitionList(LinkedList * _LinkedList, int _Value)
+{
+	ListNode * BeforeStart = NULL;
+	ListNode * BeforeEnd = NULL;
+	ListNode * AfterSTart = NULL;
+	ListNode * AfterEnd = NULL;
+
+	ListNode * CurrentNode = _LinkedList->_Head;
+
+	while (CurrentNode)
+	{
+		ListNode * Next = CurrentNode->_next;
+		CurrentNode->_next = NULL;
+
+		if (CurrentNode->_data < _Value)
+		{
+			if (BeforeStart == NULL)
+			{
+				BeforeStart = CurrentNode;
+				BeforeEnd = CurrentNode;
+			}
+			else
+			{
+				BeforeEnd->_next = CurrentNode;
+				BeforeEnd = CurrentNode;
+			}
+		}
+		else
+		{
+			if (AfterSTart == NULL)
+			{
+				AfterSTart = CurrentNode;
+				AfterEnd = CurrentNode;
+			}
+			else
+			{
+				AfterEnd->_next = CurrentNode;
+				AfterEnd = CurrentNode;
+			}
+
+		}
+
+		CurrentNode = Next;
+
+	}
+
+	if (BeforeStart == NULL)
+	{
+		return AfterSTart;
+	}
+
+	//Merge the lists.
+
+	BeforeEnd->_next = AfterSTart;
+	return BeforeStart;
+}
+
 

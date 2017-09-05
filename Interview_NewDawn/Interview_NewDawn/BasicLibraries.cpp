@@ -17,9 +17,9 @@ int main()
 	AddToList(&TestList, 7);
 	AddToList(&TestList, 8);
 	AddToList(&TestList, 14);
-	AddToList(&TestList, 14);
-	AddToList(&TestList, 14);
-	AddToList(&TestList, 14);
+	AddToList(&TestList, 5);
+	AddToList(&TestList, 3);
+	AddToList(&TestList, 2);
 
 	PrintList(&TestList);
 
@@ -28,7 +28,7 @@ int main()
 
 	//we want to remove duplicates from a linked list...
 
-	RemoveKth(&TestList, 3);
+	TestList._Head = PartitionList(&TestList, 5);
 
 	PrintList(&TestList);
 
