@@ -241,4 +241,47 @@ ListNode * PartitionList(LinkedList * _LinkedList, int _Value)
 	return BeforeStart;
 }
 
+void RemoveLoop(LinkedList * _List)
+{
+
+	//first we detect if there is a loop within the list or not.
+	ListNode * Slow_Runner = _List->_Head;
+	ListNode * Fast_Runner = _List->_Head;
+	ListNode * LoopNode = NULL;
+
+	while (Slow_Runner != NULL && Fast_Runner != NULL && Fast_Runner->_next != NULL)
+	{
+		Slow_Runner = Slow_Runner->_next;
+		Fast_Runner = Fast_Runner->_next->_next;
+
+		if (Slow_Runner == Fast_Runner) // Loop found
+		{
+			LoopNode = Slow_Runner;
+			continue;
+		}
+	}
+
+	if (LoopNode == NULL) // no loop found.
+	{
+		return;
+	}
+
+	//reset the runners and count the number of nodes in the loop.
+	unsigned int k = 1;
+	ListNode * ptr1 = LoopNode->_next;
+
+	while (ptr1->_next != LoopNode)
+	{
+		k++;
+		ptr1 = ptr1->_next;
+	}
+
+	//there are K nodes in the loop
+	
+	
+
+
+
+}
+
 
