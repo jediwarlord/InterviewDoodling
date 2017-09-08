@@ -241,4 +241,72 @@ ListNode * PartitionList(LinkedList * _LinkedList, int _Value)
 	return BeforeStart;
 }
 
+LinkedList * AddLinkedlist(LinkedList * _List1, LinkedList * _List2)
+{
+	if (_List1 == nullptr && _List2 == nullptr)
+		return nullptr;
+
+	ListNode * Node1 = _List1->_Head;
+	ListNode * Node2 = _List2->_Head;
+	LinkedList * ReturnValue = (LinkedList *) malloc(sizeof(LinkedList));
+	ReturnValue->_Current = NULL;
+	ReturnValue->_Head = NULL;
+	ReturnValue->_Tail = NULL;
+	int carry = 0;
+
+	while (Node1 != NULL && Node2 != NULL)
+	{
+		int _sum = Node1->_data + Node2->_data + carry;
+		carry = _sum / 10;
+		_sum = _sum % 10;
+
+		//insert into new linkedlist
+		AddToList(ReturnValue, _sum);
+
+		//progress the traversal nodes...
+		Node1 = Node1->_next;
+		Node2 = Node2->_next;
+
+	}
+
+	//now we check to see if there are remaining nodes left.
+
+	if (Node1 != NULL)
+	{// remaining nodes ListNode1 need to be added
+		while (Node1 != NULL)
+		{
+			int _sum = 0;
+			_sum = Node1->_data + carry;
+
+			carry = _sum / 10;
+			_sum = _sum % 10;
+
+			AddToList(ReturnValue, _sum);
+			
+			Node1 = Node1->_next;
+		}
+	}
+	else if (Node2 != NULL)
+	{
+		while (Node2 != NULL)
+		{
+			int _sum = 0;
+			_sum = Node2->_data + carry;
+
+			carry = _sum / 10;
+			_sum = _sum % 10;
+
+			AddToList(ReturnValue, _sum);
+
+			Node2 = Node2->_next;
+		}
+	} 
+	else if (carry != 0)
+	{
+		AddToList(ReturnValue, carry);
+	}
+
+	return ReturnValue;
+}
+
 
