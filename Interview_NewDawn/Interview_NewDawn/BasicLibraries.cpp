@@ -9,10 +9,23 @@ int main()
 {
 	
 	//initialize test list...
-	LinkedList TestList;
-	TestList._Current = NULL;
-	TestList._Head = NULL;
-	TestList._Tail = NULL;
+	LinkedList TestList, _Number1, _Number2, * _Result;
+	TestList._Current = NULL, _Number1._Current = NULL, _Number2._Current = NULL;
+	TestList._Head = NULL, _Number1._Head = NULL, _Number2._Head = NULL;
+	TestList._Tail = NULL, _Number1._Head = NULL, _Number2._Head = NULL;
+
+	AddToList(&_Number1, 7);
+	AddToList(&_Number1, 8);
+	AddToList(&_Number1, 1); // _Number1 = 187
+
+
+	AddToList(&_Number2, 7);
+	AddToList(&_Number2, 8);
+	AddToList(&_Number2, 9); // _Number2 = 987
+	
+	_Result = AddLinkedlist(&_Number1, &_Number2);
+
+	PrintList(_Result);
 
 	AddToList(&TestList, 7);
 	AddToList(&TestList, 8);
