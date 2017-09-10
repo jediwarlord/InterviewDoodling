@@ -1,6 +1,8 @@
 ﻿  stdafx.cpp
+  StacksQueues.cpp
   BasicLinkedList.cpp
+c:\users\omer\source\repos\interviewdoodling\interview_newdawn\interview_newdawn\basiclinkedlist.cpp(293): warning C4018: '<': signed/unsigned mismatch
   BasicLibraries.cpp
   Generating Code...
-  Interview_NewDawn.vcxproj -> C:\Users\ommalik\Source\Repos\InterviewDoodling\Interview_NewDawn\Debug\BasicLibraries.exe
-  Interview_NewDawn.vcxproj -> C:\Users\ommalik\Source\Repos\InterviewDoodling\Interview_NewDawn\Debug\BasicLibraries.pdb (Partial PDB)
+  Interview_NewDawn.vcxproj -> C:\Users\Omer\Source\Repos\InterviewDoodling\Interview_NewDawn\Debug\BasicLibraries.exe
+  Interview_NewDawn.vcxproj -> C:\Users\Omer\Source\Repos\InterviewDoodling\Interview_NewDawn\Debug\BasicLibraries.pdb (Partial PDB)

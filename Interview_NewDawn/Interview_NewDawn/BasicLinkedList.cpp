@@ -241,8 +241,14 @@ ListNode * PartitionList(LinkedList * _LinkedList, int _Value)
 	return BeforeStart;
 }
 
-<<<<<<< HEAD
-void RemoveLoop(LinkedList * _List)
+BOOL IsPalindrome(LinkedList * _LinkedList)
+{
+
+	return 0;
+}
+
+
+	void RemoveLoop(LinkedList * _List)
 {
 
 	//first we detect if there is a loop within the list or not.
@@ -278,12 +284,37 @@ void RemoveLoop(LinkedList * _List)
 	}
 
 	//there are K nodes in the loop
-	
-	
+	//now lets progress both nodes one step at a time and they will meet at the beginning point..
+	ListNode * ptr2 = _List->_Head;
+	ptr1 = ptr2;
+
+	//move ptr2 forward k steps
+
+	for (int i = 0; i < k; i++)
+	{
+		ptr2 = ptr2->_next;
+	}
+
+	//now move both one step at a time until they meet. at that point they are at the beginning of the loop.
+	while (ptr2 != ptr1)
+	{
+		ptr2 = ptr2->_next;
+		ptr1 = ptr1->_next;
+	}
+
+	//they are at the beginning... move one pointer around to point to the first pointer and that's where we break the loop.
+	while (ptr2->_next != ptr1)
+	{
+		ptr2 = ptr2->_next;
+	}
+
+	//BREAK IT FINALLY!
+	ptr2->_next = NULL;
+
+}
 
 
 
-=======
 LinkedList * AddLinkedlist(LinkedList * _List1, LinkedList * _List2)
 {
 	if (_List1 == nullptr && _List2 == nullptr)
@@ -350,7 +381,7 @@ LinkedList * AddLinkedlist(LinkedList * _List1, LinkedList * _List2)
 	}
 
 	return ReturnValue;
->>>>>>> 1f2b9a6449f9eb218244b2289cd359d607b661c8
+
 }
 
 

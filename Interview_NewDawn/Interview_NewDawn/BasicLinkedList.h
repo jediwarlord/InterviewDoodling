@@ -32,7 +32,11 @@ ListNode * GetNodeKth(LinkedList * _LinkedList, int _kth);
 
 ListNode * PartitionList(LinkedList * _LinkedList, int _Value);
 
-<<<<<<< HEAD
+/* 
+Implement a function to check if a linked list is a palindrome.
+*/
+
+BOOL IsPalindrome(LinkedList * _LinkedList);
 
 /* 
 
@@ -48,7 +52,7 @@ Output: C
 */
 
 void RemoveLoop(LinkedList * _List);
-=======
+
 /* 
 You have two numbers represented by a linked list, where each node contains a
 single digit. The digits are stored in reverse order, such that the Ts digit is at the
@@ -60,4 +64,4 @@ Output: 2 -> 1 -> 9.That is, 912.
 */
 
 LinkedList * AddLinkedlist(LinkedList * _List1, LinkedList * _List2);
->>>>>>> 1f2b9a6449f9eb218244b2289cd359d607b661c8
+
