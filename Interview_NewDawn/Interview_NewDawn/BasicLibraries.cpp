@@ -47,6 +47,8 @@ int main()
 	push(1, 254);
 	push(2, 300);
 
+
+
 	
 
     return 0;

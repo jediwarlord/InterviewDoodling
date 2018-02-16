@@ -62,3 +62,8 @@ int GetBufferIndex(int _StackNum)
 {
 	return ((_StackNum) * BufferSize) + Stackpointer[_StackNum];
 }
+
+
+// Function definitions for problem 4.1 
+
+

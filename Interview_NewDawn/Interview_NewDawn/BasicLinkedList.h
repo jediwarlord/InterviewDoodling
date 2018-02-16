@@ -17,6 +17,8 @@ typedef struct LinkedList {
 
 BOOL AddToList(LinkedList *_LinkedList, int _data);
 
+int GetSize(LinkedList *_LinkedList);
+
 void PrintList(LinkedList *_LinkedList);
 
 BOOL RemoveDup(LinkedList *_LinkedList);

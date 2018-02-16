@@ -38,6 +38,31 @@ BOOL AddToList(LinkedList * _LinkedList, int _data)
 	return true;
 }
 
+int GetSize(LinkedList * _LinkedList)
+{
+	int _Size = 0;
+	ListNode * _TempRunner = NULL;
+
+	if (!_LinkedList->_Head)
+	{
+		return 0;
+	}
+
+	_TempRunner = _LinkedList->_Head;
+
+	//count head ..
+	_Size++;
+
+	//Count list.
+	while (_TempRunner->_next)
+	{
+		_TempRunner = _TempRunner->_next;
+		_Size++;
+	}
+
+	return _Size;
+}
+
 void PrintList(LinkedList * _LinkedList)
 {
 	if (!_LinkedList->_Head)
